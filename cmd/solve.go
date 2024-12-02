@@ -18,7 +18,10 @@ var solveCmd = &cobra.Command{
 	Long: `Solve Advent of Code for the specified day(s) or range of days, outputs 
 the associated solutions and visualizations`,
 	Run: func(cmd *cobra.Command, args []string) {
-		days := []func() (int, int){internal.Day1}
+		days := []func() (int, int){
+			internal.Day1,
+			internal.Day2,
+		}
 		totalStartTime := time.Now()
 		for i, day := range days {
 			startTime := time.Now()

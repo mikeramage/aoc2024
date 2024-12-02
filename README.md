@@ -19,3 +19,12 @@ they (or I) have really understood it all.
 
 Still, 2 stars is 2 stars and I quite enjoyed mucking about with cobra-cli. Onwards and upwards. Roll on 
 Day 2! 
+
+## Day 2
+Dear oh dear oh dear. Weak. This was extremely painful to watch for the omnipresent, obnoxiously critical, entirely imaginary observer leering over my shoulder (imagine some dusty old Professor Snape figure sneering away). I finished ages ago and he's still tutting away, whispering snide comments and disparaging remarks in my ear. Perhaps staying up to 2am last night wasn't the brightest of ideas, or perhaps my mind is simply dimming as the cobwebs encroach, marking my steady progress into the depths of middle age. No! I'm not dead yet, dammit! I CAN STILL DO THIS!
+
+Anyway, I got to the answer eventually by way of a few coffees and some confused meanderings around the misty peripheries of reason and logic, haphazardly stumbling onto a successful solution like one of those infinitely many monkeys with a typewriter. Turns out I was trying to be a bit too "clever" (admittedly, based on how this puzzle went, I'm taking quite the liberties with the word), going for some Leetcode-style highly-optimised single-pass solution and getting bewildered by edge cases. It's not a job interview you doofus. Just use brute force like you always do! Ugh. 
+
+After solving it myself, I had a look on YouTube at Jonathan Paulson's Python solution, which took a different approach. After I stopped crying (he solved it in 3 minutes 55 seconds despite having some annoying connectivity issues with the server that probably cost him around a minute, whereas it took me ... well, never you mind how long it took me. It's not a competition. Jeez, just leave it, will you?), I re-implemented his algorithm in Go (the "Alt" functions), which was clunky but educational - got to look at some iter and slices package stuff.
+
+Tomorrow is another day.

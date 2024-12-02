@@ -1,31 +1,17 @@
 package internal
 
 import (
-	"bufio"
-	"log"
-	"os"
 	"slices"
 	"strconv"
 	"strings"
 )
 
 func Day1() (int, int) {
-	f, err := os.Open("./input/day1.txt")
-	if err != nil {
-		log.Fatalln("Could not open file for reading:", err)
-	}
-	defer func() {
-		if err := f.Close(); err != nil {
-			log.Println("Warning: failed to close file:", err)
-		}
-	}()
-
-	scanner := bufio.NewScanner(f)
-
+	lines := Lines("./input/day1.txt")
 	var left, right []int
 
-	for scanner.Scan() {
-		input := strings.Fields(scanner.Text())
+	for _, line := range lines {
+		input := strings.Fields(line)
 		l, _ := strconv.Atoi(input[0])
 		r, _ := strconv.Atoi(input[1])
 		left = append(left, l)
@@ -38,7 +24,7 @@ func Day1() (int, int) {
 	part1 := 0
 	m := make(map[int]int)
 	for i := 0; i < len(left); i++ {
-		diff := abs(left[i] - right[i])
+		diff := Abs(left[i] - right[i])
 		part1 += diff
 		m[right[i]]++
 	}
@@ -49,11 +35,4 @@ func Day1() (int, int) {
 	}
 
 	return part1, part2
-}
-
-func abs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
