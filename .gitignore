@@ -23,3 +23,6 @@ go.work.sum
 
 # env file
 .env
+
+# I really don't want to check in my session cookie for the world to see!
+session.txt
