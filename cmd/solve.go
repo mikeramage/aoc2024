@@ -21,6 +21,7 @@ the associated solutions and visualizations`,
 		days := []func() (int, int){
 			internal.Day1,
 			internal.Day2,
+			internal.Day3,
 		}
 		totalStartTime := time.Now()
 		for i, day := range days {

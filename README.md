@@ -28,3 +28,8 @@ Anyway, I got to the answer eventually by way of a few coffees and some confused
 After solving it myself, I had a look on YouTube at Jonathan Paulson's Python solution, which took a different approach. After I stopped crying (he solved it in 3 minutes 55 seconds despite having some annoying connectivity issues with the server that probably cost him around a minute, whereas it took me ... well, never you mind how long it took me. It's not a competition. Jeez, just leave it, will you?), I re-implemented his algorithm in Go (the "Alt" functions), which was clunky but educational - got to look at some iter and slices package stuff.
 
 Tomorrow is another day.
+
+## Day 3
+Still not exactly showering myself in glory. Easier than yesterday, but instead of using a simple regex for part 2, I went down a rabbit hole of finding start and stop indices manually and then slicing and dicing on those instead of letting the regex engine doing it for me. But I got the answer both ways and used more Go features than I otherwise would. 
+
+Regex in Go feels a bit incomplete, particularly the handling of named capturing groups (unless I'm missing something, you need to map the names to the result values manually to be able to refer to them by name, which kind of defeats the point). 
