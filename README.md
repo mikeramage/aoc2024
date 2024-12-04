@@ -33,3 +33,8 @@ Tomorrow is another day.
 Still not exactly showering myself in glory. Easier than yesterday, but instead of using a simple regex for part 2, I went down a rabbit hole of finding start and stop indices manually and then slicing and dicing on those instead of letting the regex engine doing it for me. But I got the answer both ways and used more Go features than I otherwise would. 
 
 Regex in Go feels a bit incomplete, particularly the handling of named capturing groups (unless I'm missing something, you need to map the names to the result values manually to be able to refer to them by name, which kind of defeats the point). 
+
+## Day 4
+Out all day marshalling school kids around public transport and a busy museum (and yes, I was _supposed_ to be marshalling the kids. It was sanctioned by the school. I didn't just decide to round up some random children and move them around the city all day for something to do). And so I didn't get started till after dinner. And I'm exhausted since herding cats is tiring. So it didn't go that well, OK? 
+
+Anyway, I had some idea of organising the input into a 2D character array, creating 1D arrays of string "views" at the different angles (diagonal is quite fun), and doing a string count of XMAS and SAMX for each string in the views for the 4 different orientations. I'm quite glad I started down this track because I came across "runes" in the process, which is a cool name for unicode codepoints. But I got fed up because it turned out to be a bit of a faff and, like I said, I'm tired. And more importantly, I sensed it was unlikely that that approach would work for part 2. How right I was. So I came up with a very dull, workmanlike implementation that might as well have been written in C. Bo-ring!
