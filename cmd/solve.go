@@ -23,6 +23,7 @@ the associated solutions and visualizations`,
 			internal.Day2,
 			internal.Day3,
 			internal.Day4,
+			internal.Day5,
 		}
 		totalStartTime := time.Now()
 		for i, day := range days {
