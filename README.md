@@ -45,3 +45,11 @@ Go, why do you have no set in your standard collections? Yes, I know I can just 
 It's a bit like that time I annoyed a bunch of Italians. I already spoke Spanish and a some French, so I spent a couple of weeks learning some basic Italian, and then went on holiday to Italy, possessed of the hideously arrogant misconception that I was fluent in the language. You know, if you don't know the word it's bound to be some Italianisation of whatever I'd say in Spanish/French, right? Am I right??? So yeah, I just swanned around Rome, happily spamming the locals with my bastard pidgin until being humbled by a bunch of confused looks and the occasional rude gesticulation and accompanying stream of fruity invective. AoC is definitely good for learning the idioms of a new coding language (particularly if that language happens to be Rust: I'm looking at you, Madam Compiler) in the same way an that an angry Roman flipping his fingers off his chin and telling you where to go (inside your own bottom, apparently) as if you've just insulted his entire family is quite motivating for _actually bothering to get off your lazy arse and learn_ the true idioms of his spoken language. (I should probably say I'm exaggerating (er ... _lying_) for comic effect. In reality, all the Italians I met on that holiday were really friendly and usually found my "Italian" hilarious - if occasionally mystifying. At least I appeared to be _trying_ to speak it instead of shouting English at them slowly.)
 
 Anyhow, Day 5 was straightforward enough. A basic dependency graph problem. I just used a map of pages to their set (I mean - grrrr! - _map_) of prerequisites and it fell out reasonably quickly (once I'd fixed the sloppy bugs I introduced along the way of course). 
+
+## Day 6
+Brute forced this one
+
+## Day 7
+Brute forced this one too. 
+
+Yeah.

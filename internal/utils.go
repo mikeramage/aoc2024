@@ -35,3 +35,7 @@ func Abs(x int) int {
 	}
 	return x
 }
+
+func withinBounds(r, c, rows, cols int) bool {
+	return r < rows && r >= 0 && c < cols && c >= 0
+}

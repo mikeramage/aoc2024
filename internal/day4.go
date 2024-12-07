@@ -61,7 +61,3 @@ func isMasX(chars [][]byte, r, c, rows, cols int) bool {
 		((chars[r-1][c+1] == 'M') && (chars[r+1][c-1] == 'S') ||
 			(chars[r-1][c+1] == 'S') && (chars[r+1][c-1] == 'M'))
 }
-
-func withinBounds(r, c, rows, cols int) bool {
-	return r < rows && r >= 0 && c < cols && c >= 0
-}
