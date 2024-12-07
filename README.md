@@ -47,7 +47,7 @@ It's a bit like that time I annoyed a bunch of Italians. I already spoke Spanish
 Anyhow, Day 5 was straightforward enough. A basic dependency graph problem. I just used a map of pages to their set (I mean - grrrr! - _map_) of prerequisites and it fell out reasonably quickly (once I'd fixed the sloppy bugs I introduced along the way of course). 
 
 ## Day 6
-Brute forced this one
+Brute forced this one.
 
 ## Day 7
 Brute forced this one too. 
