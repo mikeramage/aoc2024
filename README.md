@@ -53,3 +53,8 @@ Brute forced this one.
 Brute forced this one too. 
 
 Yeah.
+
+## Day8 
+Bunch of maps. Counting antinodes. Little picture on paper of adding/subtracting vectors so I don't get too befuddled. Fine. Whatever Can't really be bothered looking for more optimal solutions or making my code nice or anything. Got the answer. It's a Sunday. Happy. Yeah ... 
+
+... Well, a lot happier than I am about the water pipe leaking in my bathroom. The pipe is copper and some imcomprehensible clown of a contractor (or perhaps it was some recklessly over-ambitious previous home owner somewhere low down on the DIY Dunning-Kruger curve; there are some now-disabled "interesting" DIY electrics in the attic as well as some highly dubious carpentry in the kitchen so I wouldn't be surprised) went and partially embedded it in the concrete underflooring when they were laying the lovely faux wood floor panels (who the hell puts a "wooden" floor in their bathroom anyway. It's a bathroom. Use tiles you idiots!) Of course, the concrete seems to have reacted with the copper over the years and has corroded it, resulting in a burst pipe, a puddle on my floor, who knows what behind the wooden panelling, and a day of stress on hold to the insurance company who are currently overwhelmed by the volume of claims arising from Storm Darragh. Of course they need to cut the wall away and possibly get a massive chisel out to hack at the concrete and it's costing a minor fortune. I'm paying one way or another. Either I pay for it all, or the insurance company does and I pay the excess and an increased premium the rest of my life. Anyway, rant over. Might actually talk about something actually relevant to advent of code tomorrow. Yeah, right! 

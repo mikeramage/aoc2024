@@ -24,10 +24,6 @@ const (
 	invalid  GridContent = '@' // Can use any symbol for this
 )
 
-type Position struct {
-	row, col int
-}
-
 type GuardState struct {
 	position    Position
 	orientation Orientation

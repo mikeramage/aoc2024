@@ -6,6 +6,10 @@ import (
 	"os"
 )
 
+type Position struct {
+	row, col int
+}
+
 func Lines(fileName string) []string {
 
 	f, err := os.Open(fileName)
