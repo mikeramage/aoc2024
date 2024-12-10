@@ -6,6 +6,39 @@ import (
 	"os"
 )
 
+type Queue[T any] interface {
+	Append(v T)
+	PopFront() T
+	Len() int
+}
+
+// Queue implementation
+type QueueImpl[T any] struct {
+	elements []T
+}
+
+func (q *QueueImpl[T]) Append(v T) {
+	q.elements = append(q.elements, v)
+}
+
+func (q *QueueImpl[T]) Len() int {
+	return len(q.elements)
+}
+
+func (q *QueueImpl[T]) PopFront() T {
+	if len(q.elements) == 0 {
+		panic("Cannot pop from empty queue!")
+	}
+	var el T
+	el, q.elements = q.elements[0], q.elements[1:]
+
+	return el
+}
+
+func newQ[T any]() Queue[T] {
+	return &QueueImpl[T]{elements: make([]T, 0)}
+}
+
 type Position struct {
 	row, col int
 }
@@ -42,4 +75,8 @@ func Abs(x int) int {
 
 func withinBounds(r, c, rows, cols int) bool {
 	return r < rows && r >= 0 && c < cols && c >= 0
+}
+
+func withinBoundsPos(p Position, rows, cols int) bool {
+	return p.row < rows && p.row >= 0 && p.col < cols && p.col >= 0
 }

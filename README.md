@@ -63,3 +63,8 @@ Bunch of maps. Counting antinodes. Little picture on paper of adding/subtracting
 Let's talk about plumbing. Actually, let's not. And let's _definitely_ not talk about the terrifying discovery of the crumbling, decaying mortar/brickwork currently holding up my house.
 
 Right, Day9. Not to put too fine a point on it: total shitshow. No problem coming up with the right approach (if not optimal, at least workable - ultimately 200ms for both parts). 2-pointers solution for part1, single pass, fine. That didn't extend to part2, but ok, I just created maps of where the spaces and blocks were and corresponding sizes and iterated over them slotting the blocks in. But I made stupid error after stupid error and took an eternity to fix them all. Not sure why, but I didn't use the example data until the end, which would have sped things up considerably. I'm putting it down to the stress of having a house that's falling apart and the endless demands on my wallet from the plumber as he finds problem after problem. Yeah, that's what it was. But like I said, I don't want to talk about that.
+
+## Day10
+I had a really good day today. An excellent one in fact. It really was the best day I've had for quite some time. 
+
+Despite my abject performance on today's Advent of Code puzzle. 
