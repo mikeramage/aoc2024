@@ -21,27 +21,19 @@ func Day10() (int, int) {
 	rows := len(lines)
 	cols := len(lines[0])
 	grid, trailheads := parseInput(lines)
-	scores := make([]int, len(trailheads))
 	ratings := make([]int, len(trailheads))
 	for i, trailhead := range trailheads {
+		seen := make(map[Position]bool)
 		cellQ := newQ[*Cell]()
 		cellQ.Append(trailhead)
-		seen := make(map[Position]bool)
-		ratings[i]++ //There's always at least one path
 		for cellQ.Len() > 0 {
 			cell := cellQ.PopFront()
-			seen[cell.pos] = true
 			dPos := []Position{{1, 0}, {-1, 0}, {0, 1}, {0, -1}}
-			numBranches := 0
 			for _, dP := range dPos {
 				newPos := Position{cell.pos.row + dP.row, cell.pos.col + dP.col}
 				if withinBoundsPos(newPos, rows, cols) && grid[newPos].height == cell.height+1 {
-					//Got a cell that's the right height, and it's inside the grid.
-					//For considering unique paths that lead to the 9, we count branchings even if we've seen it before.
-					//Add to the queue unless it's a 9, in which case we mark it as seen and increment the score for this trailhead
-					numBranches++
-					if grid[newPos].height == 9 && !seen[newPos] {
-						scores[i]++
+					if grid[newPos].height == 9 {
+						ratings[i]++
 						seen[newPos] = true
 					} else {
 						//Stick it in the queue
@@ -49,18 +41,12 @@ func Day10() (int, int) {
 					}
 				}
 			}
-			if numBranches != 0 { //If the paths fork there are numBranches - 1 new paths (one of them is the existing path)
-				ratings[i] += numBranches - 1
-			} else if cell.height != 9 {
-				//If we hit a dead end before the 9 it's not a trail. Subtract 1 as we've overcounted.
-				ratings[i]--
-			}
 		}
+		part1 += len(seen)
 	}
 
-	for i, score := range scores {
-		part1 += score
-		part2 += ratings[i]
+	for _, rating := range ratings {
+		part2 += rating
 	}
 
 	return part1, part2
