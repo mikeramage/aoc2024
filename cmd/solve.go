@@ -18,7 +18,7 @@ var solveCmd = &cobra.Command{
 	Long: `Solve Advent of Code for the specified day(s) or range of days, outputs 
 the associated solutions and visualizations`,
 	Run: func(cmd *cobra.Command, args []string) {
-		days := []func() (int, int){
+		solutions := []func() (int, int){
 			internal.Day1,
 			internal.Day2,
 			internal.Day3,
@@ -30,25 +30,36 @@ the associated solutions and visualizations`,
 			internal.Day9,
 			internal.Day10,
 			internal.Day11,
+			internal.Day12,
+			internal.Day13,
 		}
-		totalStartTime := time.Now()
-		for i, day := range days {
-			startTime := time.Now()
-			part1, part2 := day()
-			endTime := time.Now()
-			elapsed := endTime.Sub(startTime)
-			fmt.Printf("Day%v took %v\n", i+1, elapsed)
-			fmt.Println("  Part 1:", part1)
-			fmt.Println("  Part 2:", part2)
-			fmt.Println()
+
+		if day == -1 {
+			totalStartTime := time.Now()
+			for i, solution := range solutions {
+				doDay(i+1, solution)
+			}
+			totalEndTime := time.Now()
+			totalElapsed := totalEndTime.Sub(totalStartTime)
+			fmt.Println("All days took", totalElapsed)
+		} else {
+			doDay(day, solutions[day-1])
 		}
-		totalEndTime := time.Now()
-		totalElapsed := totalEndTime.Sub(totalStartTime)
-		fmt.Println("All days took", totalElapsed)
 	},
+}
+
+func doDay(day int, solution func() (int, int)) {
+	startTime := time.Now()
+	part1, part2 := solution()
+	endTime := time.Now()
+	elapsed := endTime.Sub(startTime)
+	fmt.Printf("Day%v took %v\n", day, elapsed)
+	fmt.Println("  Part 1:", part1)
+	fmt.Println("  Part 2:", part2)
+	fmt.Println()
 }
 
 func init() {
 	rootCmd.AddCommand(solveCmd)
-	// TODO add option to only run a specified set of days (single, comma-separated, range, etc.)
+	solveCmd.Flags().IntVarP(&day, "day", "d", -1, "Solve the specified day only")
 }

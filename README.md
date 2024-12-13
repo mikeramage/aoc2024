@@ -54,20 +54,28 @@ Brute forced this one too.
 
 Yeah.
 
-## Day8 
+## Day 8 
 Bunch of maps. Counting antinodes. Little picture on paper of adding/subtracting vectors so I don't get too befuddled. Fine. Whatever Can't really be bothered looking for more optimal solutions or making my code nice or anything. Got the answer. It's a Sunday. Happy. Yeah ... 
 
 ... Well, a lot happier than I am about the water pipe leaking in my bathroom. The pipe is copper and some imcomprehensible clown of a contractor (or perhaps it was some recklessly over-ambitious previous home owner somewhere low down on the DIY Dunning-Kruger curve; there are some now-disabled "interesting" DIY electrics in the attic as well as some highly dubious carpentry in the kitchen so I wouldn't be surprised) went and partially embedded it in the concrete underflooring when they were laying the lovely faux wood floor panels (who the hell puts a "wooden" floor in their bathroom anyway. It's a bathroom. Use tiles you idiots!) Of course, the concrete seems to have reacted with the copper over the years and has corroded it, resulting in a burst pipe, a puddle on my floor, who knows what behind the wooden panelling, and a day of stress on hold to the insurance company who are currently overwhelmed by the volume of claims arising from Storm Darragh. Of course they need to cut the wall away and possibly get a massive chisel out to hack at the concrete and it's costing a minor fortune. I'm paying one way or another. Either I pay for it all, or the insurance company does and I pay the excess and an increased premium the rest of my life. Anyway, rant over. Might actually talk about something actually relevant to advent of code tomorrow. Yeah, right! 
 
-## Day9
+## Day 9
 Let's talk about plumbing. Actually, let's not. And let's _definitely_ not talk about the terrifying discovery of the crumbling, decaying mortar/brickwork currently holding up my house.
 
 Right, Day9. Not to put too fine a point on it: total shitshow. No problem coming up with the right approach (if not optimal, at least workable - ultimately 200ms for both parts). 2-pointers solution for part1, single pass, fine. That didn't extend to part2, but ok, I just created maps of where the spaces and blocks were and corresponding sizes and iterated over them slotting the blocks in. But I made stupid error after stupid error and took an eternity to fix them all. Not sure why, but I didn't use the example data until the end, which would have sped things up considerably. I'm putting it down to the stress of having a house that's falling apart and the endless demands on my wallet from the plumber as he finds problem after problem. Yeah, that's what it was. But like I said, I don't want to talk about that.
 
-## Day10
+## Day 10
 I had a really good day today. An excellent one in fact. It really was the best day I've had for quite some time. 
 
 Despite my abject performance on today's Advent of Code puzzle. 
 
-## Day11
+## Day 11
 Day 2 took me ages, sad I know. I went from linked list implementation for part 1 (obviously borked for part 2, since it's hundreds of millions of elements by the time you get to iteration 40ish) to trying to come up with some massively overengineered recursive thing because I noticed that you tend to get repeats. So a zero will expand to a massive list 20 odd iterations later, but some of these elements will be zeros so you know what they'll end up being in 20 iterations time, etc. And I totally missed the dead simple map-of-stone-to-count-of-occurrences solution that I ended up with, which only takes 12ms to run. So from foam slipper to crack a nut to broken and unfixable Rube Goldberg machine with a flamethrower and chainsaw to crack a nut, totally neglecting the nutcracker that was in the kitchen drawer all along. Ahhhh ... duh, why didn't I see that? Crack. If this wasn't a public repo I'd be using some fairly ripe and fruity vocabulary right now. But it is, so dang and blast it all to heck. 
+
+## Day 12
+Bleurgh! Is that a bit of sick in my mouth? Yep. What a disaster. That'll teach me to solve AoC problems with a hangover. Sleepy eyes, sluggish solving, cruddy code. The less said the better. Onto day 13 ... 
+
+## Day 13
+... Is it a crime to just use maths here? It's just a system of linear equations with a unique solution (number of unknowns = number of equations and the equations are not linearly dependent). Feels ... well ... cheaty. 
+
+But I'm still hungover, so 2 stars is 2 stars.  

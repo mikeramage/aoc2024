@@ -43,6 +43,26 @@ type Position struct {
 	row, col int
 }
 
+func comparePositions(a, b Position) int {
+	if a.row > b.row {
+		return 1
+	}
+
+	if a.row < b.row {
+		return -1
+	}
+
+	if a.col > b.col {
+		return 1
+	}
+
+	if a.col < b.col {
+		return -1
+	}
+
+	return 0
+}
+
 func Lines(fileName string) []string {
 
 	f, err := os.Open(fileName)
