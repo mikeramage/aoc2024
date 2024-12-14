@@ -32,6 +32,7 @@ the associated solutions and visualizations`,
 			internal.Day11,
 			internal.Day12,
 			internal.Day13,
+			internal.Day14,
 		}
 
 		if day == -1 {

@@ -78,4 +78,10 @@ Bleurgh! Is that a bit of sick in my mouth? Yep. What a disaster. That'll teach 
 ## Day 13
 ... Is it a crime to just use maths here? It's just a system of linear equations with a unique solution (number of unknowns = number of equations and the equations are not linearly dependent). Feels ... well ... cheaty. 
 
-But I'm still hungover, so 2 stars is 2 stars.  
+But I'm still hungover, so 2 stars is 2 stars. 
+
+## Day 14
+See what you can do without a hangover? Perfectly sensible solution, bit of a manual thing to get part 2, but I did it a bit more formally later, 
+choosing the iteration with the minimum variance of the robot positions. 
+
+Problem is I'm going to have a hangover tomorrow. The downside of Advent of Code is that it tends to coincide with Christmas parties.
