@@ -1,9 +1,12 @@
-package internal
+package day6
 
 import (
 	"fmt"
 	"maps"
 	"slices"
+
+	"github.com/mikeramage/aoc2024/position"
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 type Orientation int
@@ -18,21 +21,21 @@ const (
 type GridContent byte
 
 const (
-	empty    GridContent = '.'
-	obstacle GridContent = '#'
-	guard    GridContent = '^' // Can assume facing up. This is transient, only used for initialization
-	invalid  GridContent = '@' // Can use any symbol for this
+	empty   GridContent = '.'
+	wall    GridContent = '#'
+	guard   GridContent = '^' // Can assume facing up. This is transient, only used for initialization
+	invalid GridContent = 'X' // Can use any symbol for this
 )
 
 type GuardState struct {
-	position    Position
+	pos         position.Position
 	orientation Orientation
 }
 
 func Day6() (int, int) {
-	mapRows := Lines("./input/day6.txt")
+	mapRows := utils.Lines("./input/day6.txt")
 	var guardState GuardState
-	visitedPositions := make(map[Position][]Orientation)
+	visitedPositions := make(map[position.Position][]Orientation)
 	var initialGuardState GuardState
 
 	var mapContents [][]GridContent
@@ -41,8 +44,8 @@ func Day6() (int, int) {
 		for c := 0; c < len(mapRow); c++ {
 			content := GridContent(mapRow[c])
 			if GridContent(mapRow[c]) == guard {
-				position := Position{r, c}
-				guardState = GuardState{position, up}
+				pos := position.Position{Row: r, Col: c}
+				guardState = GuardState{pos, up}
 				initialGuardState = guardState //Store this for part 2 - can't put an obstacle on home square
 				setVisited(visitedPositions, guardState)
 				content = empty // The grid square is empty at this location (we ignore the guard)
@@ -65,18 +68,18 @@ func Day6() (int, int) {
 
 	var part2 int
 	//Don't want to consider the initial position for placing an obstacle
-	delete(visitedPositions, initialGuardState.position)
+	delete(visitedPositions, initialGuardState.pos)
 	origVisitedPositions := visitedPositions
-	for position := range maps.Keys(origVisitedPositions) {
+	for pos := range maps.Keys(origVisitedPositions) {
 		guardState = initialGuardState
-		visitedPositions = make(map[Position][]Orientation)
+		visitedPositions = make(map[position.Position][]Orientation)
 		setVisited(visitedPositions, guardState)
-		mapContents[position.row][position.col] = obstacle //Add a new obstacle
+		mapContents[pos.Row][pos.Col] = wall //Add a new obstacle
 		_, loopEncountered := walkMaze(&guardState, mapContents, visitedPositions, rows, cols)
 		if loopEncountered {
 			part2++
 		}
-		mapContents[position.row][position.col] = empty
+		mapContents[pos.Row][pos.Col] = empty
 	}
 
 	return part1, part2
@@ -84,7 +87,7 @@ func Day6() (int, int) {
 
 func walkMaze(guardState *GuardState,
 	mapContents [][]GridContent,
-	visitedPositions map[Position][]Orientation,
+	visitedPositions map[position.Position][]Orientation,
 	rows, cols int) (int, bool) {
 	next := ahead(guardState, mapContents, rows, cols)
 	steps := 1 //includes staring point
@@ -93,7 +96,7 @@ func walkMaze(guardState *GuardState,
 		switch next {
 		case empty:
 			move(guardState)
-			orientations, visited := visitedPositions[guardState.position]
+			orientations, visited := visitedPositions[guardState.pos]
 			if !visited {
 				//Not been here before - increment part1 answer
 				steps++
@@ -103,7 +106,7 @@ func walkMaze(guardState *GuardState,
 				loopEncountered = true
 				return steps, loopEncountered
 			}
-		case obstacle:
+		case wall:
 			turn(guardState)
 		default:
 			panic(fmt.Sprintf("Bad grid content: %v", next))
@@ -114,30 +117,30 @@ func walkMaze(guardState *GuardState,
 	return steps, loopEncountered
 }
 
-func setVisited(visited map[Position][]Orientation, state GuardState) {
-	visited[state.position] = append(visited[state.position], state.orientation)
+func setVisited(visited map[position.Position][]Orientation, state GuardState) {
+	visited[state.pos] = append(visited[state.pos], state.orientation)
 }
 
 func ahead(state *GuardState, mapContents [][]GridContent, rows, cols int) GridContent {
 	var r, c int
 	switch state.orientation {
 	case up:
-		r = state.position.row - 1
-		c = state.position.col
+		r = state.pos.Row - 1
+		c = state.pos.Col
 	case right:
-		r = state.position.row
-		c = state.position.col + 1
+		r = state.pos.Row
+		c = state.pos.Col + 1
 	case down:
-		r = state.position.row + 1
-		c = state.position.col
+		r = state.pos.Row + 1
+		c = state.pos.Col
 	case left:
-		r = state.position.row
-		c = state.position.col - 1
+		r = state.pos.Row
+		c = state.pos.Col - 1
 	default:
 		panic(fmt.Sprintf("Bad orientation: %v", state.orientation))
 	}
 
-	if !withinBounds(r, c, rows, cols) {
+	if !position.WithinBounds(r, c, rows, cols) {
 		return invalid
 	} else {
 		return mapContents[r][c]
@@ -162,13 +165,13 @@ func turn(state *GuardState) {
 func move(state *GuardState) {
 	switch state.orientation {
 	case up:
-		state.position.row--
+		state.pos.Row--
 	case right:
-		state.position.col++
+		state.pos.Col++
 	case down:
-		state.position.row++
+		state.pos.Row++
 	case left:
-		state.position.col--
+		state.pos.Col--
 	default:
 		panic(fmt.Sprintf("Bad orientation: %v", state.orientation))
 	}

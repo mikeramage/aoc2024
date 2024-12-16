@@ -1,13 +1,15 @@
-package internal
+package day2
 
 import (
 	"slices"
 	"strconv"
 	"strings"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 func Day2() (int, int) {
-	lines := Lines("./input/day2.txt")
+	lines := utils.Lines("./input/day2.txt")
 	var levels [][]int
 
 	for _, line := range lines {
@@ -80,7 +82,7 @@ func checkRow(row []int, indexToSkip int) (bool, int) {
 
 func checkPair(row []int, current, next, sign int) bool {
 	diff := row[next] - row[current]
-	if (sign < 0 && diff > 0) || (sign > 0 && diff < 0) || Abs(diff) < 1 || Abs(diff) > 3 {
+	if (sign < 0 && diff > 0) || (sign > 0 && diff < 0) || utils.Abs(diff) < 1 || utils.Abs(diff) > 3 {
 		return false
 	}
 
@@ -140,7 +142,7 @@ func checkRowAlt(row []int) bool {
 	}
 
 	for i := 0; i < len(row)-1; i++ {
-		absDiff := Abs(row[i+1] - row[i])
+		absDiff := utils.Abs(row[i+1] - row[i])
 		if absDiff < 1 || absDiff > 3 {
 			return false
 		}

@@ -1,14 +1,16 @@
-package internal
+package day5
 
 import (
 	"slices"
 	"strconv"
 	"strings"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 func Day5() (int, int) {
 
-	lines := Lines("./input/day5.txt")
+	lines := utils.Lines("./input/day5.txt")
 	precedenceMap := make(map[int]map[int]bool)
 	var updates [][]int
 	var part1, part2 int

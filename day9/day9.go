@@ -1,8 +1,10 @@
-package internal
+package day9
 
 import (
 	"slices"
 	"strconv"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 const space = -1
@@ -91,7 +93,7 @@ func calculatePart2(diskLayout, blockMapKeys, spaceMapKeys []int, blockMap, spac
 }
 
 func createDataStructures() ([]int, []int, []int, map[int]int, map[int]int) {
-	input := Lines("./input/day9.txt")
+	input := utils.Lines("./input/day9.txt")
 	var diskMap []int
 	for _, char := range input[0] {
 		digit, _ := strconv.Atoi(string(char))

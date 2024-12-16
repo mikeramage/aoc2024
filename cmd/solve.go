@@ -7,7 +7,21 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/mikeramage/aoc2024/internal"
+	"github.com/mikeramage/aoc2024/day1"
+	"github.com/mikeramage/aoc2024/day10"
+	"github.com/mikeramage/aoc2024/day11"
+	"github.com/mikeramage/aoc2024/day12"
+	"github.com/mikeramage/aoc2024/day13"
+	"github.com/mikeramage/aoc2024/day14"
+	"github.com/mikeramage/aoc2024/day15"
+	"github.com/mikeramage/aoc2024/day2"
+	"github.com/mikeramage/aoc2024/day3"
+	"github.com/mikeramage/aoc2024/day4"
+	"github.com/mikeramage/aoc2024/day5"
+	"github.com/mikeramage/aoc2024/day6"
+	"github.com/mikeramage/aoc2024/day7"
+	"github.com/mikeramage/aoc2024/day8"
+	"github.com/mikeramage/aoc2024/day9"
 	"github.com/spf13/cobra"
 )
 
@@ -19,20 +33,21 @@ var solveCmd = &cobra.Command{
 the associated solutions and visualizations`,
 	Run: func(cmd *cobra.Command, args []string) {
 		solutions := []func() (int, int){
-			internal.Day1,
-			internal.Day2,
-			internal.Day3,
-			internal.Day4,
-			internal.Day5,
-			internal.Day6,
-			internal.Day7,
-			internal.Day8,
-			internal.Day9,
-			internal.Day10,
-			internal.Day11,
-			internal.Day12,
-			internal.Day13,
-			internal.Day14,
+			day1.Day1,
+			day2.Day2,
+			day3.Day3,
+			day4.Day4,
+			day5.Day5,
+			day6.Day6,
+			day7.Day7,
+			day8.Day8,
+			day9.Day9,
+			day10.Day10,
+			day11.Day11,
+			day12.Day12,
+			day13.Day13,
+			day14.Day14,
+			day15.Day15,
 		}
 
 		if day == -1 {

@@ -1,7 +1,12 @@
-package internal
+package day4
+
+import (
+	"github.com/mikeramage/aoc2024/position"
+	"github.com/mikeramage/aoc2024/utils"
+)
 
 func Day4() (int, int) {
-	lines := Lines("./input/day4.txt")
+	lines := utils.Lines("./input/day4.txt")
 
 	var chars [][]byte
 	for _, line := range lines {
@@ -33,15 +38,15 @@ func Day4() (int, int) {
 
 func countXmas(chars [][]byte, r, c, rows, cols int) int {
 	count := 8 //Assume XMAS in all directions
-	directions := [][]int{{0, 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}, {1, 0}, {1, 1}}
+	// directions := [][]int{{0, 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}, {1, 0}, {1, 1}}
 	sequence := []byte{'M', 'A', 'S'}
-	for _, direction := range directions {
+	for _, direction := range position.DirectionsDiag {
 		rr := r
 		cc := c
 		for _, letter := range sequence {
 			rr += direction[0]
 			cc += direction[1]
-			if !withinBounds(rr, cc, rows, cols) || chars[rr][cc] != letter {
+			if !position.WithinBounds(rr, cc, rows, cols) || chars[rr][cc] != letter {
 				count--
 				break //Direction doesn't work
 			}
@@ -52,10 +57,10 @@ func countXmas(chars [][]byte, r, c, rows, cols int) int {
 }
 
 func isMasX(chars [][]byte, r, c, rows, cols int) bool {
-	return withinBounds(r-1, c-1, rows, cols) &&
-		withinBounds(r+1, c+1, rows, cols) &&
-		withinBounds(r-1, c+1, rows, cols) &&
-		withinBounds(r+1, c-1, rows, cols) &&
+	return position.WithinBounds(r-1, c-1, rows, cols) &&
+		position.WithinBounds(r+1, c+1, rows, cols) &&
+		position.WithinBounds(r-1, c+1, rows, cols) &&
+		position.WithinBounds(r+1, c-1, rows, cols) &&
 		((chars[r-1][c-1] == 'M') && (chars[r+1][c+1] == 'S') ||
 			(chars[r-1][c-1] == 'S') && (chars[r+1][c+1] == 'M')) &&
 		((chars[r-1][c+1] == 'M') && (chars[r+1][c-1] == 'S') ||

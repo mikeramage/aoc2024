@@ -1,9 +1,11 @@
-package internal
+package day7
 
 import (
 	"fmt"
 	"strconv"
 	"strings"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 type Operator string
@@ -16,7 +18,7 @@ const (
 
 func Day7() (int, int) {
 
-	equations := Lines("./input/day7.txt")
+	equations := utils.Lines("./input/day7.txt")
 
 	ops := []Operator{plus, mul, concat}
 	lhss, rhss := parseEquations(equations)

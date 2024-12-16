@@ -1,10 +1,12 @@
-package internal
+package day13
 
 import (
 	"fmt"
 	"math/big"
 	"regexp"
 	"strconv"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 type Button struct {
@@ -29,7 +31,7 @@ func Day13() (int, int) {
 	var prize Prize
 	var clawMachines []ClawMachine
 
-	lines := Lines("./input/day13.txt")
+	lines := utils.Lines("./input/day13.txt")
 	for _, line := range lines {
 		if match := reButton.FindStringSubmatch(line); match != nil {
 			X, _ := strconv.Atoi(match[2])

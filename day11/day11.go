@@ -1,9 +1,11 @@
-package internal
+package day11
 
 import (
 	"maps"
 	"strconv"
 	"strings"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 func Day11() (int, int) {
@@ -47,7 +49,7 @@ func blink(stones map[int]int, blinks int) map[int]int {
 }
 
 func parseStones() map[int]int {
-	input := Lines("./input/day11.txt")
+	input := utils.Lines("./input/day11.txt")
 	stonesStr := strings.Fields(input[0])
 
 	stones := make(map[int]int)

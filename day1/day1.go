@@ -1,13 +1,15 @@
-package internal
+package day1
 
 import (
 	"slices"
 	"strconv"
 	"strings"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 func Day1() (int, int) {
-	lines := Lines("./input/day1.txt")
+	lines := utils.Lines("./input/day1.txt")
 	var left, right []int
 
 	for _, line := range lines {
@@ -24,7 +26,7 @@ func Day1() (int, int) {
 	part1 := 0
 	m := make(map[int]int)
 	for i := 0; i < len(left); i++ {
-		diff := Abs(left[i] - right[i])
+		diff := utils.Abs(left[i] - right[i])
 		part1 += diff
 		m[right[i]]++
 	}

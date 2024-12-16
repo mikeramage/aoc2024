@@ -1,10 +1,12 @@
-package internal
+package day3
 
 import (
 	"regexp"
 	"slices"
 	"strconv"
 	"strings"
+
+	"github.com/mikeramage/aoc2024/utils"
 )
 
 var reMul = regexp.MustCompile(`mul\((\d+),(\d+)\)`)
@@ -13,7 +15,7 @@ var reDoDont = regexp.MustCompile(`do\(\)(.*?)(don't\(\)|\z)`)
 const do = "do()"
 
 func Day3() (int, int) {
-	input := Lines("./input/day3.txt")
+	input := utils.Lines("./input/day3.txt")
 	var part1 int
 	var part2 int
 	var doArr []string
