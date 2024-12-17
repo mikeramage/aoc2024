@@ -14,16 +14,13 @@ type Item[T any] struct {
 	Index    int
 }
 
-// Insist values are comparable so we can lookup/update by value
-type PriorityQueue[T comparable] struct {
-	items    []*Item[T]
-	indexMap map[T]int
+type PriorityQueue[T any] struct {
+	items []*Item[T]
 }
 
-func NewPriorityQueue[T comparable]() *PriorityQueue[T] {
+func NewPriorityQueue[T any]() *PriorityQueue[T] {
 	return &PriorityQueue[T]{
-		items:    []*Item[T]{},
-		indexMap: make(map[T]int),
+		items: []*Item[T]{},
 	}
 }
 
@@ -40,8 +37,6 @@ func (pq PriorityQueue[T]) Swap(i, j int) {
 	pq.items[i], pq.items[j] = pq.items[j], pq.items[i]
 	pq.items[i].Index = i
 	pq.items[j].Index = j
-	pq.indexMap[pq.items[i].Value] = pq.items[i].Index
-	pq.indexMap[pq.items[j].Value] = pq.items[j].Index
 }
 
 func (pq *PriorityQueue[T]) PushItem(item *Item[T]) {
@@ -65,7 +60,6 @@ func (pq *PriorityQueue[T]) Push(x any) {
 	n := len(pq.items)
 	item.Index = n
 	pq.items = append(pq.items, item)
-	pq.indexMap[item.Value] = n
 }
 
 func (pq *PriorityQueue[T]) Pop() any {
@@ -77,7 +71,6 @@ func (pq *PriorityQueue[T]) Pop() any {
 	item := old[n-1]
 	old[n-1] = nil //Allow GC
 	pq.items = old[:n-1]
-	delete(pq.indexMap, item.Value)
 	return item
 }
 
@@ -88,30 +81,11 @@ func (pq *PriorityQueue[T]) Update(item *Item[T], value T, priority int) {
 	heap.Fix(pq, item.Index)
 }
 
-// Checks if value exists in priority queue
-func (pq *PriorityQueue[T]) Contains(value T) bool {
-	_, exists := pq.indexMap[value]
-	return exists
-}
-
-func (pq *PriorityQueue[T]) GetItem(value T) *Item[T] {
-	index, exists := pq.indexMap[value]
-	if !exists {
-		return nil
-	}
-	item := pq.items[index]
-	return item
-}
-
-// Finds item by value and updates the priority. If multiple items have the
-// same value this will find whatever is stored in the map (the last added or
-// updated item with that value) and update the priority of that.
-func (pq *PriorityQueue[T]) UpdateByValue(value T, priority int) {
-	index, exists := pq.indexMap[value]
-	if !exists {
-		panic("Can't update non-existent value")
-	}
-	item := pq.items[index]
-	item.Priority = priority
-	heap.Fix(pq, index)
-}
+// func (pq *PriorityQueue[T]) GetItem(value T) *Item[T] {
+// 	index, exists := pq.indexMap[value]
+// 	if !exists {
+// 		return nil
+// 	}
+// 	item := pq.items[index]
+// 	return item
+// }

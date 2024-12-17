@@ -85,3 +85,12 @@ See what you can do without a hangover? Perfectly sensible solution, bit of a ma
 choosing the iteration with the minimum variance of the robot positions. 
 
 Problem is I'm going to have a hangover tomorrow. The downside of Advent of Code is that it tends to coincide with Christmas parties.
+
+## Day 15 
+Graaahaaaaaaarrrraaarrrr ...
+
+## Day 16
+
+...rrrraaaaahhhhhhgggh.
+
+Dear God.
