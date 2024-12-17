@@ -94,3 +94,28 @@ Graaahaaaaaaarrrraaarrrr ...
 ...rrrraaaaahhhhhhgggh.
 
 Dear God.
+
+## Day 17
+
+Really happy with my part 1 code. Clear and simple. 
+
+But part 2? ... Goddamit, Eric! That's half my Tuesday gone.
+
+Part 2 required spotting a really gnarly pattern in the output when you look at the register in octal. Goodness knows how to do show it analytically, but the following works:
+- The rightmost digit of the output is fixed by the leftmost octal digit of the register. 
+- The exact mapping of register digit to output digit changes at each place value, but once the top digit is fixed, changing digits in other place values of the register has no effect. 
+- Then the second-bottom in the output is only affected by the second top octal digit in the input and so on.
+- So with a bit of bitshifting of the register, and indexing into the corresponding output/program digits, find the matching digits at each of the 16 powers of 8 (my program length is 16 digits) and Bob's your uncle.
+	
+Did I explain that well? Not really. Can I be bothered to do better? No. 
+
+It's not the full story either. Bob was not my uncle.
+	
+To make things harder: 
+- There are sometimes multiple solutions to a given digit and sometimes none.
+- So I had to store a bunch of alternative candidate solutions at each place value and chuck 'em out if they weren't working. 
+- At the end I took the smallest surviving candidate. 
+
+Clear? Thought not. It worked though. 2 stars. And it all runs in under 1ms. 
+
+As usual, I'll probably have made this waaaaay more complicated than it needed to be. Some cunning bastard will have a 2-line solution: "Oh, obviously you just do \<insert cunning thing\>". Yeah yeah, smug it up. Bet you're fun at parties. 
