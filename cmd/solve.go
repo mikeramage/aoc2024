@@ -14,6 +14,7 @@ import (
 	"github.com/mikeramage/aoc2024/day13"
 	"github.com/mikeramage/aoc2024/day14"
 	"github.com/mikeramage/aoc2024/day15"
+	"github.com/mikeramage/aoc2024/day16"
 	"github.com/mikeramage/aoc2024/day2"
 	"github.com/mikeramage/aoc2024/day3"
 	"github.com/mikeramage/aoc2024/day4"
@@ -48,6 +49,7 @@ the associated solutions and visualizations`,
 			day13.Day13,
 			day14.Day14,
 			day15.Day15,
+			day16.Day16,
 		}
 
 		if day == -1 {
