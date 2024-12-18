@@ -29,6 +29,6 @@ func (q *QueueImpl[T]) PopFront() T {
 	return el
 }
 
-func NewQ[T any]() Queue[T] {
+func NewQueue[T any]() Queue[T] {
 	return &QueueImpl[T]{elements: make([]T, 0)}
 }

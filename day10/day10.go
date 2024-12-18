@@ -28,7 +28,7 @@ func Day10() (int, int) {
 	ratings := make([]int, len(trailheads))
 	for i, trailhead := range trailheads {
 		seen := make(map[position.Position]bool)
-		cellQ := queue.NewQ[*Cell]()
+		cellQ := queue.NewQueue[*Cell]()
 		cellQ.Append(trailhead)
 		for cellQ.Len() > 0 {
 			cell := cellQ.PopFront()

@@ -4,6 +4,10 @@ type Position struct {
 	Row, Col int
 }
 
+func NewPosition(row, col int) Position {
+	return Position{Row: row, Col: col}
+}
+
 func ComparePositions(a, b Position) int {
 	if a.Row > b.Row {
 		return 1
@@ -22,6 +26,16 @@ func ComparePositions(a, b Position) int {
 	}
 
 	return 0
+}
+
+func Add(p Position, q Position) Position {
+	r := p.Row + q.Row
+	c := p.Col + q.Col
+	return NewPosition(r, c)
+}
+
+func (p Position) Equal(q Position) bool {
+	return p.Row == q.Row && p.Col == q.Col
 }
 
 var DirectionsPos = []Position{{Row: 1, Col: 0}, {Row: -1, Col: 0}, {Row: 0, Col: 1}, {Row: 0, Col: -1}}
