@@ -132,3 +132,7 @@ Relatively easy day, but what is it with me and off-by-one errors? I always find
 Talking of right and left, I also suffer from an off-by-one error in the space of only those two values. Sad but true. I only nail it around 50% of the time, which is maximally useless. One time I left a house party in the Spanish city of Valencia at 2am, took a quick look at the map, and started leading a group of friends and acquaintances "towards home" along the street. Only I'd turned left instead of right and, given the slightly inebriated state of our group, the mistake wasn't spotted until well over an hour later when we reached the city limits and became alarmed by the sudden absence of buildings. By the time we got home at 5am some of the friends had become acquaintances and some of the acquaintances had become enemies. At least it was warm and it wasn't raining. Had it been either cold or raining my life would probably have turned out very different because one of the girls in the group, who I only vaguely knew at the time and who takes to cold and rain like your average housecat, is now my wife. True story.
 
 Classic Ramage.
+
+## Day 19
+
+Another Christmas party another hangover. Luckily for me today was easy. A bit of recursion here, a bit of memoisation there, and when I finally managed to count things properly, even my wine-damaged brain managed to lurch to victory in a relatively short time. Terrified of what this simplicity means for tomorrow and the weekend though. 

@@ -1,7 +1,6 @@
 package day13
 
 import (
-	"fmt"
 	"math/big"
 	"regexp"
 	"strconv"
@@ -106,7 +105,6 @@ func Day13() (int, int) {
 		}
 	}
 
-	fmt.Println(part2Big)
 	part2 = int(part2Big.Int64())
 
 	return part1, part2
