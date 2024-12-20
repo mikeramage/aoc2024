@@ -136,3 +136,7 @@ Classic Ramage.
 ## Day 19
 
 Another Christmas party another hangover. Luckily for me today was easy. A bit of recursion here, a bit of memoisation there, and when I finally managed to count things properly, even my wine-damaged brain managed to lurch to victory in a relatively short time. Terrified of what this simplicity means for tomorrow and the weekend though. 
+
+## Day 20
+
+Not that bad really which probably means tomorrow will be hell on earth. Today was another grid/maze, but not one that needed any kind of complicated traversal. Crass brute force was good enough, especially since I unexpectedly ended up pouring more wine down my gullet last night and don't have the wit or energy to do any better.
