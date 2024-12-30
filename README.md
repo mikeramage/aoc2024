@@ -140,3 +140,25 @@ Another Christmas party another hangover. Luckily for me today was easy. A bit o
 ## Day 20
 
 Not that bad really which probably means tomorrow will be hell on earth. Today was another grid/maze, but not one that needed any kind of complicated traversal. Crass brute force was good enough, especially since I unexpectedly ended up pouring more wine down my gullet last night and don't have the wit or energy to do any better.
+
+## Day 21 
+
+Part 2 took me forever. Forever. 
+
+## Day 22
+
+Easy. Next!
+
+## Day 23
+
+Next!
+
+Which means Day 24 is going to be ...
+
+## Day 24
+... brutal. My code is a hellscape of ugly brute-forcery, heuristics and manual gubbins. Can't be bothered to make any improvements. At least I now know how to add two numbers using logic gates. Which is nice. 
+
+## Day 25
+Easy peasy as it should be. Still managed to make a meal of it.
+
+And that's it! Till next year, suckas!

@@ -10,7 +10,6 @@ import (
 type GridContent byte
 
 var (
-	wall  GridContent = '#'
 	empty GridContent = '.'
 	start GridContent = 'S'
 	end   GridContent = 'E'
@@ -144,9 +143,6 @@ func findBestCheats(path []*GridCell, grid [][]GridCell, cheatDuration, minSavin
 				dcAbs := duration - utils.Abs(dr)
 				dcs := []int{dcAbs, -dcAbs}
 				for _, dc := range dcs {
-					if count == 1 {
-						fmt.Printf("(%v, %v)\n", dr, dc)
-					}
 					endPos := position.NewPosition(cheatStart.position.Row+dr, cheatStart.position.Col+dc)
 					if position.WithinBoundsPos(endPos, len(grid), len(grid[0])) {
 						cheatEnd := &grid[endPos.Row][endPos.Col]

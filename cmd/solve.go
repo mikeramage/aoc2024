@@ -20,6 +20,11 @@ import (
 	"github.com/mikeramage/aoc2024/day19"
 	"github.com/mikeramage/aoc2024/day2"
 	"github.com/mikeramage/aoc2024/day20"
+	"github.com/mikeramage/aoc2024/day21"
+	"github.com/mikeramage/aoc2024/day22"
+	"github.com/mikeramage/aoc2024/day23"
+	"github.com/mikeramage/aoc2024/day24"
+	"github.com/mikeramage/aoc2024/day25"
 	"github.com/mikeramage/aoc2024/day3"
 	"github.com/mikeramage/aoc2024/day4"
 	"github.com/mikeramage/aoc2024/day5"
@@ -58,6 +63,11 @@ the associated solutions and visualizations`,
 			day18.Day18,
 			day19.Day19,
 			day20.Day20,
+			day21.Day21,
+			day22.Day22,
+			day23.Day23,
+			day24.Day24,
+			day25.Day25,
 		}
 
 		if day == -1 {
